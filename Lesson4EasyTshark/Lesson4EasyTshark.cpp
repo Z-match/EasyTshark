@@ -10,6 +10,7 @@
 #include "rapidjson/writer.h"
 #include "rapidjson/prettywriter.h"
 #include "rapidjson/stringbuffer.h"
+#include "ip2region_util.h"
 
 struct Packet
 {
@@ -17,8 +18,10 @@ struct Packet
     std::string time;
     uint32_t cap_len;
     std::string src_ip;
+    std::string src_location;
     int src_port;
     std::string dst_ip;
+    std::string dst_location;
     int dst_port;
     std::string protocol;
     std::string info;
@@ -44,7 +47,7 @@ struct PacketHeader {
 	uint32_t len;
 };
 
-void parseLine(std::string line, Packet& packet) {
+void parseLine(std::string line, Packet& packet, IP2RegionUtil& locationUtil) {
     if (line.back() == '\n') {
         line.pop_back();
     }
@@ -80,6 +83,8 @@ void parseLine(std::string line, Packet& packet) {
         packet.cap_len = std::stoi(fields[2]);
         packet.src_ip = fields[3].empty() ? fields[4] : fields[3];
         packet.dst_ip = fields[5].empty() ? fields[6] : fields[5];
+        packet.src_location = locationUtil.getIpLocation(packet.src_ip);
+        packet.dst_location = locationUtil.getIpLocation(packet.dst_ip);
         if (!fields[7].empty() || !fields[8].empty()) {
             packet.src_port = std::stoi(fields[7].empty() ? fields[8] : fields[7]);
         }
@@ -101,8 +106,10 @@ void printPacket(const Packet& packet) {
     pktObj.AddMember("frame_number", packet.frame_number, allocator);
     pktObj.AddMember("timestamp", rapidjson::Value(packet.time.c_str(), allocator), allocator);
     pktObj.AddMember("src_ip", rapidjson::Value(packet.src_ip.c_str(), allocator), allocator);
+    pktObj.AddMember("src_location", rapidjson::Value(packet.src_location.c_str(), allocator), allocator);
     pktObj.AddMember("src_port", packet.src_port, allocator);
     pktObj.AddMember("dst_ip", rapidjson::Value(packet.dst_ip.c_str(), allocator), allocator);
+    pktObj.AddMember("dst_location", rapidjson::Value(packet.dst_location.c_str(), allocator), allocator);
     pktObj.AddMember("dst_port", packet.dst_port, allocator);
     pktObj.AddMember("protocol", rapidjson::Value(packet.protocol.c_str(), allocator), allocator);
     pktObj.AddMember("info", rapidjson::Value(packet.info.c_str(), allocator), allocator);
@@ -145,6 +152,9 @@ int main()
     std::string packet_file = "D:/Code/c++/Lesson4EasyTshark/packets.pcap";
     std::string command = "D:/EdgeDownload/Wireshark/tshark.exe -r " + packet_file + " -T fields -e frame.number -e frame.time -e frame.cap_len -e ip.src -e ipv6.src -e ip.dst -e ipv6.dst -e tcp.srcport -e udp.srcport -e tcp.dstport -e udp.dstport -e _ws.col.Protocol -e _ws.col.Info";
 
+    IP2RegionUtil ip2RegionUtil;
+    ip2RegionUtil.init("D:/Code/c++/Lesson4EasyTshark/Lesson4EasyTshark/third_library/ip2region/ip2region.xdb");
+
     FILE* pipe = _popen(command.c_str(), "r");
     if (!pipe) {
         std::cerr << "Failed to run tshark command!" << std::endl;
@@ -156,7 +166,7 @@ int main()
     uint32_t file_offset = sizeof(PcapHeader);
     while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
         Packet packet;
-        parseLine(buffer, packet);
+        parseLine(buffer, packet, ip2RegionUtil);
 
         packet.file_offset = file_offset + sizeof(PacketHeader);
         file_offset = file_offset + sizeof(PacketHeader) + packet.cap_len;
