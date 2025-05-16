@@ -138,6 +138,24 @@ bool TsharkManager::parseLine(std::string line, std::shared_ptr<Packet> packet) 
     }
 }
 
+std::string TsharkManager::epoch_to_formatted(double epoch_time) {
+    // 分离整数秒和小数秒
+    time_t seconds = static_cast<time_t>(epoch_time);
+    double fractional = epoch_time - seconds;
+    int microseconds = static_cast<int>(round(fractional * 1'000'000));
+
+    // 转换为本地时间
+    struct tm tm;
+    localtime_s(&tm, &seconds);
+
+    // 格式化输出
+    std::ostringstream oss;
+    oss << std::put_time(&tm, "%Y-%m-%d %H:%M:%S")
+        << "." << std::setfill('0') << std::setw(6) << microseconds;
+
+    return oss.str();
+}
+
 void TsharkManager::printAllPackets() {
 
     for (auto pair : allPackets) {
@@ -149,8 +167,8 @@ void TsharkManager::printAllPackets() {
         rapidjson::Document::AllocatorType& allocator = pktObj.GetAllocator();
         pktObj.SetObject();
 
-        pktObj.AddMember("frame_number", packet->frame_number, allocator);
-        pktObj.AddMember("timestamp", rapidjson::Value(packet->time.c_str(), allocator), allocator);
+        pktObj.AddMember("frame_number", packet->frame_number, allocator); 
+        pktObj.AddMember("timestamp", rapidjson::Value(epoch_to_formatted(std::stod(packet->time)).c_str(), allocator), allocator);
         pktObj.AddMember("src_mac", rapidjson::Value(packet->src_mac.c_str(), allocator), allocator);
         pktObj.AddMember("dst_mac", rapidjson::Value(packet->dst_mac.c_str(), allocator), allocator);
         pktObj.AddMember("src_ip", rapidjson::Value(packet->src_ip.c_str(), allocator), allocator);

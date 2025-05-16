@@ -15,6 +15,10 @@
 #include <fstream>
 #include <unordered_map>
 #include <loguru/loguru.hpp>
+#include <ctime>
+#include <iomanip>
+#include <sstream>
+#include <cmath>
 
 class TsharkManager
 {
@@ -34,6 +38,7 @@ public:
 private:
     // 解析每一行
     bool parseLine(std::string line, std::shared_ptr<Packet> packet);
+    std::string epoch_to_formatted(double epoch_time);
 
 private:
 
