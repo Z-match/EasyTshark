@@ -1,4 +1,511 @@
-﻿  Lesson4EasyTshark.cpp
-  ip2locationTest.cpp
-  正在生成代码...
+﻿  TsharkManager.cpp
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x567 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x568 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x56b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x56c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x56d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x56e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x571 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x572 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x573 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x575 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x577 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x579 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x57a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x57b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x57d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x57e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x580 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x581 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x583 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x584 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x585 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x586 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x588 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x589 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x58a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x590 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x592 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x593 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x595 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x596 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x598 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x59a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x59b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x59c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x5a0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x5a8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x5a9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x5ab 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x5bf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x5c1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x5c2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x6fb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x6fc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x703 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x704 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x705 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x707 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x708 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x70a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x70b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x70d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x70e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x711 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x712 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x716 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x717 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x71f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x720 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x722 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x777 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x778 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x779 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x77d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x77f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x781 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x782 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x7df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x7e0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x7e5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x7e6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x7e8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x7eb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x898 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x899 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x89a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x89b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x89d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x8a1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x8a2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x8a5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x8a6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x8a7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x8aa 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x8ab 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x8ac 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x8ad 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x8b0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x8b1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x926 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x927 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x929 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x92a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x92b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x92e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x92f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x931 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x937 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x93a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x93b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xa74 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xa76 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xa77 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xa7a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xa7c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xa7e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xa7f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xa80 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xa81 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xa82 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xa83 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb71 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb73 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb74 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb76 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb7b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb7c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb80 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb8c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb8e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb8f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb91 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb92 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb94 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0xb95 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1120 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1121 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1122 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1123 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1128 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1129 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x112b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1713 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1715 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1718 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1721 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1723 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1724 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1725 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1726 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x17c3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x17c4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x17cb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x17cd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x17ce 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1815 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1816 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1819 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x181b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x181c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1822 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1824 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1829 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x182a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x182b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x182c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x182d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x182f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1831 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1832 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x18a1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x18a2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x18a6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x18a9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x18aa 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x18ab 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x18ac 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x18ae 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x18af 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x18b2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a1b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a1d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a1e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a1f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a20 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a26 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a27 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a28 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a56 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a57 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a5a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a5b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a5e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a5f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a62 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a64 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1a65 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1ab7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1ab8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1abd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1abe 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1abf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1ac0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1ac1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1ac4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1ac6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1ac7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(1,1): warning C4828: 文件包含在偏移 0x1ac8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x204 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x205 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x207 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x20d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x20e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x210 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x211 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x24b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x24c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x250 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x251 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x253 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x255 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x258 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x259 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x25a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x25c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x25e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x287 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x288 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x28c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x28d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x28e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x28f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x290 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x293 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x295 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x298 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x299 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x29a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x29c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x29d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x29e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x29f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x2a0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x2a1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x2a3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x2a5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x2a6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x310 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x311 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x318 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x3b9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x3ba 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x3bd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x3be 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x3c0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x3c6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x3c9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x3ca 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x3f8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x3f9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x3fb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x3ff 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x400 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x401 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x403 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x404 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x406 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x408 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x40b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x40c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x410 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x411 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x415 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x417 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x419 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x41c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x41f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x420 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x426 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x428 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x42a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x42d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x42e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x434 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x436 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x437 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x438 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x439 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x43a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x43b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x43e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x441 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x444 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x445 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x449 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x44a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x44b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x44c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x44e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x451 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.h(1,1): warning C4828: 文件包含在偏移 0x452 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\tshark_datatype.h(1,1): warning C4828: 文件包含在偏移 0x200 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\tshark_datatype.h(1,1): warning C4828: 文件包含在偏移 0x201 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\tshark_datatype.h(1,1): warning C4828: 文件包含在偏移 0x205 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\tshark_datatype.h(1,1): warning C4828: 文件包含在偏移 0x2de 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\tshark_datatype.h(1,1): warning C4828: 文件包含在偏移 0x2df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\tshark_datatype.h(1,1): warning C4828: 文件包含在偏移 0x2e5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\tshark_datatype.h(1,1): warning C4828: 文件包含在偏移 0x2e6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\tshark_datatype.h(1,1): warning C4828: 文件包含在偏移 0x2ea 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\tshark_datatype.h(1,1): warning C4828: 文件包含在偏移 0x2ec 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\tshark_datatype.h(1,1): warning C4828: 文件包含在偏移 0x2ed 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\tshark_datatype.h(1,1): warning C4828: 文件包含在偏移 0x2ef 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
   Lesson4EasyTshark.vcxproj -> D:\Code\c++\Lesson4EasyTshark\x64\Debug\Lesson4EasyTshark.exe

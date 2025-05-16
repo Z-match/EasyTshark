@@ -39,6 +39,9 @@
     <ClCompile Include="ip2locationTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="TsharkManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="third_library\httplib\httplib.h">
@@ -183,6 +186,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ip2region_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TsharkManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tshark_datatype.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
