@@ -11,11 +11,12 @@ int main(int argc, char* argv[]) {
 #endif // _WIN32
 
     loguru::init(argc, argv);
+    loguru::add_file("logs.txt", loguru::Append, loguru::Verbosity_MAX);
 
     TsharkManager tsharkManager("D:/Code/c++/Lesson4EasyTshark/Lesson4EasyTshark/");
     tsharkManager.analysisFile("D:/Code/c++/Lesson4EasyTshark/packets.pcap");
 
-    tsharkManager.printAllPackets();
+    //tsharkManager.printAllPackets();
 
     return 0;
 }

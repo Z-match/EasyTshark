@@ -41,7 +41,7 @@ bool TsharkManager::analysisFile(std::string filePath) {
 
     FILE* pipe = _popen(command.c_str(), "r");
     if (!pipe) {
-        std::cerr << "Failed to run tshark command!" << std::endl;
+        LOG_F(ERROR, "Failed to run tshark command!");
         return false;
     }
 
@@ -190,24 +190,28 @@ void TsharkManager::printAllPackets() {
 
         // 打印JSON输出
         std::cout << buffer.GetString() << std::endl;
+        LOG_F(INFO, buffer.GetString());
 
-        //// 读取这个报文的原始十六进制数据
-        //std::vector<unsigned char> data;
-        //getPacketHexData(packet->frame_number, data);
-        //// 打印读取到的数据：
-        //printf("Packet Hex: ");
-        //for (unsigned char byte : data) {
-        //    printf("%02X ", byte);
-        //}
-        //printf("\n\n");
-
+        // 读取这个报文的原始十六进制数据
+        std::vector<unsigned char> data;
+        getPacketHexData(packet->frame_number, data);
+        // 拼接十六进制字符串
+        std::ostringstream hex_stream;
+        hex_stream << "Packet Hex: ";
+        for (unsigned char byte : data) {
+            hex_stream << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(byte) << " ";
+        }
+        // 用loguru输出
+        LOG_F(INFO, "%s", hex_stream.str().c_str());
     }
+
+    LOG_F(INFO, "analysis completed, the total number of packets is: %d", allPackets.size());
 }
 
 bool TsharkManager::getPacketHexData(uint32_t frameNumber, std::vector<unsigned char>& data) {
     std::ifstream file(currentFilePath, std::ios::binary);
     if (!file) {
-        std::cerr << "无法打开文件！\n";
+        LOG_F(ERROR, "can't open the file!");
         return false;
     }
 
