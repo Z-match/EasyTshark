@@ -39,7 +39,7 @@ bool TsharkManager::analysisFile(std::string filePath) {
         command += " ";
     }
 
-    FILE* pipe = _popen(command.c_str(), "r");
+    FILE* pipe = popen(command.c_str(), "r");
     if (!pipe) {
         LOG_F(ERROR, "Failed to run tshark command!");
         return false;
@@ -47,7 +47,7 @@ bool TsharkManager::analysisFile(std::string filePath) {
 
     char buffer[4096];
 
-    // µ±Ç°´¦ÀíµÄ±¨ÎÄÔÚÎÄ¼şÖĞµÄÆ«ÒÆ£¬µÚÒ»¸ö±¨ÎÄµÄÆ«ÒÆ¾ÍÊÇÈ«¾ÖÎÄ¼şÍ·24(Ò²¾ÍÊÇsizeof(PcapHeader))×Ö½Ú
+    //   Ç°    Ä±      Ä¼  Ğµ Æ« Æ£   Ò»     Äµ Æ« Æ¾   È«   Ä¼ Í·24(Ò²    sizeof(PcapHeader)) Ö½ 
     uint32_t file_offset = sizeof(PcapHeader);
     while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
         std::shared_ptr<Packet> packet = std::make_shared<Packet>();
@@ -56,23 +56,23 @@ bool TsharkManager::analysisFile(std::string filePath) {
             assert(false);
         }
 
-        // ¼ÆËãµ±Ç°±¨ÎÄµÄÆ«ÒÆ£¬È»ºó¼ÇÂ¼ÔÚPacket¶ÔÏóÖĞ
+        //    ãµ±Ç°   Äµ Æ« Æ£ È»   Â¼  Packet      
         packet->file_offset = file_offset + sizeof(PacketHeader);
 
-        // ¸üĞÂÆ«ÒÆÓÎ±ê
+        //     Æ«   Î± 
         file_offset = file_offset + sizeof(PacketHeader) + packet->cap_len;
 
-        // »ñÈ¡IPµØÀíÎ»ÖÃ
+        //   È¡IP    Î»  
         packet->src_location = IP2RegionUtil::getIpLocation(packet->src_ip);
         packet->dst_location = IP2RegionUtil::getIpLocation(packet->dst_ip);
 
-        // ½«·ÖÎöµÄÊı¾İ°ü²åÈë±£´æÆğÀ´
+        //            İ°    ë±£      
         allPackets.insert(std::make_pair<>(packet->frame_number, packet));
     }
 
-    _pclose(pipe);
+    pclose(pipe);
 
-    // ¼ÇÂ¼µ±Ç°·ÖÎöµÄÎÄ¼şÂ·¾¶
+    //   Â¼  Ç°       Ä¼ Â·  
     currentFilePath = filePath;
 
     return true;
@@ -86,15 +86,15 @@ bool TsharkManager::parseLine(std::string line, std::shared_ptr<Packet> packet) 
     std::string field;
     std::vector<std::string> fields;
 
-    // ×Ô¼ºÊµÏÖ×Ö·û´®²ğ·Ö
+    //  Ô¼ Êµ   Ö·      
     size_t start = 0, end;
     while ((end = line.find('\t', start)) != std::string::npos) {
         fields.push_back(line.substr(start, end - start));
         start = end + 1;
     }
-    fields.push_back(line.substr(start)); // Ìí¼Ó×îºóÒ»¸ö×Ó´®
+    fields.push_back(line.substr(start)); //       Ò»   Ó´ 
 
-    // ×Ö¶ÎË³Ğò£º
+    //  Ö¶ Ë³  
     // 0: frame.number
     // 1: frame.time_epoch
     // 2: frame.len
@@ -139,16 +139,16 @@ bool TsharkManager::parseLine(std::string line, std::shared_ptr<Packet> packet) 
 }
 
 std::string TsharkManager::epoch_to_formatted(double epoch_time) {
-    // ·ÖÀëÕûÊıÃëºÍĞ¡ÊıÃë
+    //            Ğ¡    
     time_t seconds = static_cast<time_t>(epoch_time);
     double fractional = epoch_time - seconds;
     int microseconds = static_cast<int>(round(fractional * 1'000'000));
 
-    // ×ª»»Îª±¾µØÊ±¼ä
+    // ×ª  Îª    Ê±  
     struct tm tm;
     localtime_s(&tm, &seconds);
 
-    // ¸ñÊ½»¯Êä³ö
+    //   Ê½     
     std::ostringstream oss;
     oss << std::put_time(&tm, "%Y-%m-%d %H:%M:%S")
         << "." << std::setfill('0') << std::setw(6) << microseconds;
@@ -162,7 +162,7 @@ void TsharkManager::printAllPackets() {
 
         std::shared_ptr<Packet> packet = pair.second;
 
-        // ¹¹½¨JSON¶ÔÏó
+        //     JSON    
         rapidjson::Document pktObj;
         rapidjson::Document::AllocatorType& allocator = pktObj.GetAllocator();
         pktObj.SetObject();
@@ -183,25 +183,25 @@ void TsharkManager::printAllPackets() {
         pktObj.AddMember("cap_len", packet->cap_len, allocator);
         pktObj.AddMember("len", packet->len, allocator);
 
-        // ĞòÁĞ»¯Îª JSON ×Ö·û´®
+        //    Ğ» Îª JSON  Ö·   
         rapidjson::StringBuffer buffer;
         rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
         pktObj.Accept(writer);
 
-        // ´òÓ¡JSONÊä³ö
-        std::cout << buffer.GetString() << std::endl;
+        //   Ó¡JSON   
+        //std::cout << buffer.GetString() << std::endl;
         LOG_F(INFO, buffer.GetString());
 
-        // ¶ÁÈ¡Õâ¸ö±¨ÎÄµÄÔ­Ê¼Ê®Áù½øÖÆÊı¾İ
+        //   È¡      Äµ Ô­Ê¼Ê®          
         std::vector<unsigned char> data;
         getPacketHexData(packet->frame_number, data);
-        // Æ´½ÓÊ®Áù½øÖÆ×Ö·û´®
+        // Æ´  Ê®       Ö·   
         std::ostringstream hex_stream;
         hex_stream << "Packet Hex: ";
         for (unsigned char byte : data) {
             hex_stream << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(byte) << " ";
         }
-        // ÓÃloguruÊä³ö
+        //   loguru   
         LOG_F(INFO, "%s", hex_stream.str().c_str());
     }
 
@@ -215,10 +215,10 @@ bool TsharkManager::getPacketHexData(uint32_t frameNumber, std::vector<unsigned 
         return false;
     }
 
-    // ¶¨Î»µ½Ö¸¶¨Æ«ÒÆÁ¿
+    //   Î»  Ö¸  Æ«    
     file.seekg(allPackets[frameNumber]->file_offset, std::ios::beg);
 
-    // ¶ÁÈ¡Ö¸¶¨³¤¶ÈµÄÊı¾İ
+    //   È¡Ö¸     Èµ     
     uint32_t length = allPackets[frameNumber]->cap_len;
     data.resize(length);
     file.read(reinterpret_cast<char*>(data.data()), length);
@@ -226,4 +226,174 @@ bool TsharkManager::getPacketHexData(uint32_t frameNumber, std::vector<unsigned 
     file.close();
     return true;
 
+}
+
+std::vector<AdapterInfo> TsharkManager::getNetworkAdapters() {
+    //   Òª   Ëµ              Ğ©      Êµ        tshark -D      Ü»      Ğ©         Ëµ 
+    std::set<std::string> specialInterfaces = { "sshdump", "ciscodump", "udpdump", "randpkt" };
+
+    // Ã¶ Ùµ        Ğ± 
+    std::vector<AdapterInfo> interfaces;
+
+    // ×¼  Ò»  buffer            È¡tshark -DÃ¿Ò» Ğµ     
+    char buffer[256] = { 0 };
+    std::string result;
+
+    //    tshark -D    
+    std::string cmd = tsharkPath + " -D";
+    FILE* pipe = popen(cmd.c_str(), "r");
+    if (!pipe) {
+        throw std::runtime_error("Failed to run tshark command.");
+    }
+
+    //   È¡tshark   
+    while (fgets(buffer, 256, pipe) != nullptr) {
+        result += buffer;
+    }
+
+    //     tshark            Ê½Îª  
+    // 1. \Device\NPF_{xxxxxx} (        )
+    std::istringstream stream(result);
+    std::string line;
+    int index = 1;
+    while (std::getline(stream, line)) {
+        // Í¨   Õ¸    Ö¶ 
+        int startPos = line.find(' ');
+        if (startPos != std::string::npos) {
+            int endPos = line.find(' ', startPos + 1);
+            std::string interfaceName;
+            if (endPos != std::string::npos) {
+                interfaceName = line.substr(startPos + 1, endPos - startPos - 1);
+            }
+            else {
+                interfaceName = line.substr(startPos + 1);
+            }
+
+            //  Ëµ         
+            if (specialInterfaces.find(interfaceName) != specialInterfaces.end()) {
+                continue;
+            }
+
+            AdapterInfo adapterInfo;
+            adapterInfo.name = interfaceName;
+            adapterInfo.id = index++;
+
+            //   Î»     Å£           Ä± ×¢      È¡    
+            if (line.find("(") != std::string::npos && line.find(")") != std::string::npos) {
+                adapterInfo.remark = line.substr(line.find("(") + 1, line.find(")") - line.find("(") - 1);
+            }
+
+            interfaces.push_back(adapterInfo);
+        }
+    }
+
+    pclose(pipe);
+
+    return interfaces;
+}
+
+bool TsharkManager::startCapture(std::string adapterName) {
+    LOG_F(INFO, "å³å°†å¼€å§‹æŠ“åŒ…ï¼Œç½‘å¡ï¼š%s", adapterName.c_str());
+    // å…³é—­åœæ­¢æ ‡è®°
+    stopFlag = false;
+    // å¯åŠ¨æŠ“åŒ…çº¿ç¨‹
+    captureWorkThread = std::make_shared<std::thread>(&TsharkManager::captureWorkThreadEntry, this, "\"" + adapterName + "\"");
+    return true;
+}
+
+void TsharkManager::captureWorkThreadEntry(std::string adapterName) {
+    //std::string captureFile = "capture.pcap";
+    //std::string logFile = "tshark_output.txt";
+
+    //// æ„å»ºå®Œæ•´å‘½ä»¤ï¼ŒåŒ…å«é‡å®šå‘
+    //std::string command = tsharkPath + " -i " + adapterName +
+    //    " -w " + captureFile +
+    //    " -F pcap" +
+    //    " > " + logFile + " 2>&1";
+
+    //// ä½¿ç”¨systemè°ƒç”¨è€Œä¸æ˜¯popen
+    //system(command.c_str());
+
+    std::string captureFile = "capture.pcap";
+    std::vector<std::string> tsharkArgs = {
+        tsharkPath,
+        "-i", adapterName.c_str(),
+        "-w", captureFile,
+        "-F", "pcap",
+        "-T", "fields",
+        "-e", "frame.number",
+        "-e", "frame.time_epoch",
+        "-e", "frame.len",
+        "-e", "frame.cap_len",
+        "-e", "eth.src",
+        "-e", "eth.dst",
+        "-e", "ip.src",
+        "-e", "ipv6.src",
+        "-e", "ip.dst",
+        "-e", "ipv6.dst",
+        "-e", "tcp.srcport",
+        "-e", "udp.srcport",
+        "-e", "tcp.dstport",
+        "-e", "udp.dstport",
+        "-e", "_ws.col.Protocol",
+        "-e", "_ws.col.Info",
+    };
+
+    std::string command;
+    for (auto arg : tsharkArgs) {
+        command += arg;
+        command += " ";
+    }
+
+    FILE* pipe = ProcessUtil::PopenEx(command.c_str(), &captureTsharkPid);
+    if (!pipe) {
+        LOG_F(ERROR, "Failed to run tshark command!");
+        return;
+    }
+
+    char buffer[4096];
+
+    // å½“å‰å¤„ç†çš„æŠ¥æ–‡åœ¨æ–‡ä»¶ä¸­çš„åç§»ï¼Œç¬¬ä¸€ä¸ªæŠ¥æ–‡çš„åç§»å°±æ˜¯å…¨å±€æ–‡ä»¶å¤´24(ä¹Ÿå°±æ˜¯sizeof(PcapHeader))å­—èŠ‚
+    uint32_t file_offset = sizeof(PcapHeader);
+    while (fgets(buffer, sizeof(buffer), pipe) != nullptr && !stopFlag) {
+        //    ß²É¼   Ê±    Ë¶      Ï¢
+        std::string line = buffer;
+        if (line.find("Capturing on") != std::string::npos) {
+            continue;
+        }
+
+        std::shared_ptr<Packet> packet = std::make_shared<Packet>();
+        if (!parseLine(buffer, packet)) {
+            LOG_F(ERROR, buffer);
+            assert(false);
+        }
+
+        // è®¡ç®—å½“å‰æŠ¥æ–‡çš„åç§»ï¼Œç„¶åè®°å½•åœ¨Packetå¯¹è±¡ä¸­
+        packet->file_offset = file_offset + sizeof(PacketHeader);
+
+        // æ›´æ–°åç§»æ¸¸æ ‡
+        file_offset = file_offset + sizeof(PacketHeader) + packet->cap_len;
+
+        // è·å–IPåœ°ç†ä½ç½®
+        packet->src_location = IP2RegionUtil::getIpLocation(packet->src_ip);
+        packet->dst_location = IP2RegionUtil::getIpLocation(packet->dst_ip);
+
+        // å°†åˆ†æçš„æ•°æ®åŒ…æ’å…¥ä¿å­˜èµ·æ¥
+        allPackets.insert(std::make_pair<>(packet->frame_number, packet));
+    }
+
+    pclose(pipe);
+
+    // è®°å½•å½“å‰åˆ†æçš„æ–‡ä»¶è·¯å¾„
+    currentFilePath = captureFile;
+}
+
+// Í£Ö¹×¥  
+bool TsharkManager::stopCapture() {
+    LOG_F(INFO, "å³å°†åœæ­¢æŠ“åŒ…");
+    stopFlag = true;
+    ProcessUtil::Kill(captureTsharkPid);
+    captureWorkThread->join();
+
+    return true;
 }

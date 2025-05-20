@@ -1,0 +1,2 @@
+Capturing on 'WLAN 3'
+535 packets captured

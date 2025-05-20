@@ -23,7 +23,7 @@ struct Packet {
 };
 
 
-// PCAPÈ«¾ÖÎÄ¼şÍ·
+// PCAPå…¨å±€æ–‡ä»¶å¤´
 struct PcapHeader {
     uint32_t magic_number;
     uint16_t version_major;
@@ -34,10 +34,17 @@ struct PcapHeader {
     uint32_t network;
 };
 
-// Ã¿Ò»¸öÊı¾İ±¨ÎÄÇ°ÃæµÄÍ·
+// æ¯ä¸€ä¸ªæ•°æ®æŠ¥æ–‡å‰é¢çš„å¤´
 struct PacketHeader {
     uint32_t ts_sec;
     uint32_t ts_usec;
     uint32_t caplen;
     uint32_t len;
+};
+
+// ç½‘å¡ä¿¡æ¯
+struct AdapterInfo {
+    int id;
+    std::string name;
+    std::string remark;
 };

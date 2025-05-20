@@ -50,7 +50,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -135,6 +135,7 @@
     <ClCompile Include="ip2locationTest.cpp" />
     <ClCompile Include="ip2region_util.cpp" />
     <ClCompile Include="Lesson4EasyTshark.cpp" />
+    <ClCompile Include="ProcessUtil.cpp" />
     <ClCompile Include="third_library\ip2region\xdb_bench.cc" />
     <ClCompile Include="third_library\ip2region\xdb_search.cc" />
     <ClCompile Include="third_library\loguru\loguru.cpp" />
@@ -143,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ip2region_util.h" />
+    <ClInclude Include="ProcessUtil.h" />
     <ClInclude Include="third_library\httplib\httplib.h" />
     <ClInclude Include="third_library\ip2region\xdb_bench.h" />
     <ClInclude Include="third_library\ip2region\xdb_search.h" />
