@@ -23,6 +23,9 @@
 #include <thread>
 #include <Windows.h>
 #include "ProcessUtil.h"
+#include <map>
+#include <mutex>
+#include "AdapterMonitorInfo.h"
 
 #ifdef _WIN32
     // 使用宏来处理Windows和Unix的不同popen实现
@@ -58,6 +61,18 @@ public:
     // 停止抓包
     bool stopCapture();
 
+    // 开始监控所有网卡流量统计数据
+    void startMonitorAdaptersFlowTrend();
+
+    // 获取指定网卡的流量趋势数据
+    void adapterFlowTrendMonitorThreadEntry(std::string adapterName);
+
+    // 停止监控所有网卡流量统计数据
+    void stopMonitorAdaptersFlowTrend();
+
+    // 获取所有网卡流量统计数据
+    void getAdaptersFlowTrendData(std::map<std::string, std::map<long, long>>& flowTrendData);
+
 private:
     // 解析每一行
     bool parseLine(std::string line, std::shared_ptr<Packet> packet);
@@ -85,5 +100,13 @@ private:
 
     // 在线抓包的tshark进程PID
     PID_T captureTsharkPid = 0;
+
+    // 后台流量趋势监控信息
+    std::map<std::string, AdapterMonitorInfo> adapterFlowTrendMonitorMap;
+    // 访问上面流量趋势数据的锁
+    std::recursive_mutex adapterFlowTrendMapLock;
+
+    long adapterFlowTrendMonitorStartTime = 0;
+
 };
 

@@ -45,6 +45,9 @@
     <ClCompile Include="ProcessUtil.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="AdapterMonitorInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="third_library\httplib\httplib.h">
@@ -198,6 +201,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ProcessUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AdapterMonitorInfo.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

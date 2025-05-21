@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AdapterMonitorInfo.cpp" />
     <ClCompile Include="hexInfoRead.cpp" />
     <ClCompile Include="ip2locationTest.cpp" />
     <ClCompile Include="ip2region_util.cpp" />
@@ -143,6 +144,7 @@
     <ClCompile Include="TsharkManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AdapterMonitorInfo.h" />
     <ClInclude Include="ip2region_util.h" />
     <ClInclude Include="ProcessUtil.h" />
     <ClInclude Include="third_library\httplib\httplib.h" />
