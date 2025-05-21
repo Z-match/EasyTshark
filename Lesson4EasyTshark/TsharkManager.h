@@ -26,6 +26,7 @@
 #include <map>
 #include <mutex>
 #include "AdapterMonitorInfo.h"
+#include <codecvt>
 
 #ifdef _WIN32
     // 使用宏来处理Windows和Unix的不同popen实现
@@ -80,6 +81,8 @@ private:
     std::string epoch_to_formatted(double epoch_time);
     // 在线采集数据包的工作线程
     void captureWorkThreadEntry(std::string adapterName);
+
+    std::string utf8ToGbk(const std::string& utf8Str);
 
 private:
 

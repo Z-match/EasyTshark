@@ -301,19 +301,17 @@ bool TsharkManager::startCapture(std::string adapterName) {
     return true;
 }
 
+std::string TsharkManager::utf8ToGbk(const std::string& utf8Str) {
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> utf8conv;
+    std::wstring wstr = utf8conv.from_bytes(utf8Str);
+
+    std::vector<char> buf(wstr.size() * 2 + 1);
+    WideCharToMultiByte(CP_ACP, 0, wstr.c_str(), -1, buf.data(), buf.size(), nullptr, nullptr);
+
+    return std::string(buf.data());
+}
+
 void TsharkManager::captureWorkThreadEntry(std::string adapterName) {
-    //std::string captureFile = "capture.pcap";
-    //std::string logFile = "tshark_output.txt";
-
-    //// 构建完整命令，包含重定向
-    //std::string command = tsharkPath + " -i " + adapterName +
-    //    " -w " + captureFile +
-    //    " -F pcap" +
-    //    " > " + logFile + " 2>&1";
-
-    //// 使用system调用而不是popen
-    //system(command.c_str());
-
     std::string captureFile = "capture.pcap";
     std::vector<std::string> tsharkArgs = {
         tsharkPath,
@@ -345,7 +343,9 @@ void TsharkManager::captureWorkThreadEntry(std::string adapterName) {
         command += " ";
     }
 
-    FILE* pipe = ProcessUtil::PopenEx(command.c_str(), &captureTsharkPid);
+    // 编码转换
+    std::string gbkCommand = utf8ToGbk(command.c_str());
+    FILE* pipe = ProcessUtil::PopenEx(gbkCommand.c_str(), &captureTsharkPid);
     if (!pipe) {
         LOG_F(ERROR, "Failed to run tshark command!");
         return;
