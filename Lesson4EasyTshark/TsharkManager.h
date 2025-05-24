@@ -27,6 +27,7 @@
 #include <mutex>
 #include "AdapterMonitorInfo.h"
 #include <codecvt>
+#include "MiscUtil.h"
 
 #ifdef _WIN32
     // 使用宏来处理Windows和Unix的不同popen实现
@@ -74,6 +75,9 @@ public:
     // 获取所有网卡流量统计数据
     void getAdaptersFlowTrendData(std::map<std::string, std::map<long, long>>& flowTrendData);
 
+    // 获取指定数据包的详情内容
+    bool getPacketDetailInfo(uint32_t frameNumber, std::string& result);
+
 private:
     // 解析每一行
     bool parseLine(std::string line, std::shared_ptr<Packet> packet);
@@ -87,6 +91,7 @@ private:
 private:
 
     std::string tsharkPath;
+    std::string editcapPath;
     IP2RegionUtil ip2RegionUtil;
 
     // 当前分析的文件路径

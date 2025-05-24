@@ -136,6 +136,7 @@
     <ClCompile Include="ip2locationTest.cpp" />
     <ClCompile Include="ip2region_util.cpp" />
     <ClCompile Include="Lesson4EasyTshark.cpp" />
+    <ClCompile Include="MiscUtil.cpp" />
     <ClCompile Include="ProcessUtil.cpp" />
     <ClCompile Include="third_library\ip2region\xdb_bench.cc" />
     <ClCompile Include="third_library\ip2region\xdb_search.cc" />
@@ -146,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="AdapterMonitorInfo.h" />
     <ClInclude Include="ip2region_util.h" />
+    <ClInclude Include="MiscUtil.h" />
     <ClInclude Include="ProcessUtil.h" />
     <ClInclude Include="third_library\httplib\httplib.h" />
     <ClInclude Include="third_library\ip2region\xdb_bench.h" />

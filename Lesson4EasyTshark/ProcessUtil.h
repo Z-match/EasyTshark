@@ -14,5 +14,6 @@ class ProcessUtil
 public:
 	static FILE* PopenEx(std::string command, PID_T* pidOut = nullptr);
 	static int Kill(PID_T pid);
+	static bool Exec(std::string cmdline);
 };
 
