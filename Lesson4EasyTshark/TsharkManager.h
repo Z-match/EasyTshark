@@ -1,5 +1,4 @@
 #pragma once
-#include "tshark_datatype.h"
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
 #include "rapidjson/prettywriter.h"
@@ -28,6 +27,8 @@
 #include "AdapterMonitorInfo.h"
 #include <codecvt>
 #include "MiscUtil.h"
+#include "translator.hpp"
+#include "TsharkDatabase.h"
 
 #ifdef _WIN32
     // 使用宏来处理Windows和Unix的不同popen实现
@@ -69,6 +70,9 @@ public:
     // 获取指定网卡的流量趋势数据
     void adapterFlowTrendMonitorThreadEntry(std::string adapterName);
 
+    // 负责存储数据包和会话信息的存储线程函数
+    void storageThreadEntry();
+
     // 停止监控所有网卡流量统计数据
     void stopMonitorAdaptersFlowTrend();
 
@@ -85,6 +89,9 @@ private:
     std::string epoch_to_formatted(double epoch_time);
     // 在线采集数据包的工作线程
     void captureWorkThreadEntry(std::string adapterName);
+
+    // 处理每一个数据包
+    void processPacket(std::shared_ptr<Packet> packet);
 
     std::string utf8ToGbk(const std::string& utf8Str);
 
@@ -116,5 +123,18 @@ private:
 
     long adapterFlowTrendMonitorStartTime = 0;
 
+    Traslator translator;
+
+    // 等待存储入库的数据
+    std::vector<std::shared_ptr<Packet>> packetsTobeStore;
+
+    // 访问待存储数据的锁
+    std::mutex storeLock;
+
+    // 存储线程，负责将获取到的数据包和会话信息存储入库
+    std::shared_ptr<std::thread> storageThread;
+
+    // 数据库存储
+    std::shared_ptr<TsharkDatabase> storage;
 };
 

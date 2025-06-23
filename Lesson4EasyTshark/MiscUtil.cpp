@@ -4,8 +4,8 @@ std::string MiscUtil::getRandomString(size_t length) {
     const std::string chars = "abcdefghijklmnopqrstuvwxyz"
         "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         "0123456789";
-    std::random_device rd;  // ÓÃÓÚÖÖ×Ó
-    std::mt19937 generator(rd());  // Éú³ÉÆ÷
+    std::random_device rd;  // ç”¨äºç§å­
+    std::mt19937 generator(rd());  // ç”Ÿæˆå™¨
     std::uniform_int_distribution<> distribution(0, chars.size() - 1);
 
     std::string randomString;
@@ -17,7 +17,7 @@ std::string MiscUtil::getRandomString(size_t length) {
 }
 
 bool MiscUtil::xml2JSON(std::string xmlContent, Document& outJsonDoc) {
-    // ½âÎö XML
+    // è§£æ XML
     xml_document<> doc;
     try {
         doc.parse<0>(&xmlContent[0]);
@@ -27,18 +27,18 @@ bool MiscUtil::xml2JSON(std::string xmlContent, Document& outJsonDoc) {
         return false;
     }
 
-    // ´´½¨ JSON ÎÄµµ
+    // åˆ›å»º JSON æ–‡æ¡£
     outJsonDoc.SetObject();
     Document::AllocatorType& allocator = outJsonDoc.GetAllocator();
 
-    // »ñÈ¡ XML ¸ù½Úµã
+    // è·å– XML æ ¹èŠ‚ç‚¹
     xml_node<>* root = doc.first_node();
     if (root) {
-        // ½«¸ù½Úµã×ª»»Îª JSON
+        // å°†æ ¹èŠ‚ç‚¹è½¬æ¢ä¸º JSON
         Value root_json(kObjectType);
         xml_to_json_recursive(root_json, root, allocator);
 
-        // ½«¸ù½ÚµãÌí¼Óµ½ JSON ÎÄµµ
+        // å°†æ ¹èŠ‚ç‚¹æ·»åŠ åˆ° JSON æ–‡æ¡£
         outJsonDoc.AddMember(Value(root->name(), allocator).Move(), root_json, allocator);
     }
     return true;
@@ -47,37 +47,37 @@ bool MiscUtil::xml2JSON(std::string xmlContent, Document& outJsonDoc) {
 void MiscUtil::xml_to_json_recursive(Value& json, xml_node<>* node, Document::AllocatorType& allocator) {
     for (xml_node<>* cur_node = node->first_node(); cur_node; cur_node = cur_node->next_sibling()) {
 
-        // ¼ì²éÊÇ·ñĞèÒªÌø¹ı½Úµã
+        // æ£€æŸ¥æ˜¯å¦éœ€è¦è·³è¿‡èŠ‚ç‚¹
         xml_attribute<>* hide_attr = cur_node->first_attribute("hide");
         if (hide_attr && std::string(hide_attr->value()) == "yes") {
-            continue;  // Èç¹û hide ÊôĞÔÖµÎª "true"£¬Ìø¹ı¸Ã½Úµã
+            continue;  // å¦‚æœ hide å±æ€§å€¼ä¸º "true"ï¼Œè·³è¿‡è¯¥èŠ‚ç‚¹
         }
 
-        // ¼ì²éÊÇ·ñÒÑ¾­ÓĞ¸Ã½ÚµãÃû³ÆµÄÊı×é
+        // æ£€æŸ¥æ˜¯å¦å·²ç»æœ‰è¯¥èŠ‚ç‚¹åç§°çš„æ•°ç»„
         Value* array = nullptr;
         if (json.HasMember(cur_node->name())) {
             array = &json[cur_node->name()];
         }
         else {
-            Value node_array(kArrayType); // ´´½¨ĞÂµÄÊı×é
+            Value node_array(kArrayType); // åˆ›å»ºæ–°çš„æ•°ç»„
             json.AddMember(Value(cur_node->name(), allocator).Move(), node_array, allocator);
             array = &json[cur_node->name()];
         }
 
-        // ´´½¨Ò»¸ö JSON ¶ÔÏó´ú±íµ±Ç°½Úµã
+        // åˆ›å»ºä¸€ä¸ª JSON å¯¹è±¡ä»£è¡¨å½“å‰èŠ‚ç‚¹
         Value child_json(kObjectType);
 
-        // ´¦Àí½ÚµãµÄÊôĞÔ
+        // å¤„ç†èŠ‚ç‚¹çš„å±æ€§
         for (xml_attribute<>* attr = cur_node->first_attribute(); attr; attr = attr->next_attribute()) {
             Value attr_name(attr->name(), allocator);
             Value attr_value(attr->value(), allocator);
             child_json.AddMember(attr_name, attr_value, allocator);
         }
 
-        // µİ¹é´¦Àí×Ó½Úµã
+        // é€’å½’å¤„ç†å­èŠ‚ç‚¹
         xml_to_json_recursive(child_json, cur_node, allocator);
 
-        // ½«µ±Ç°½Úµã¶ÔÏóÌí¼Óµ½¶ÔÓ¦Êı×éÖĞ
+        // å°†å½“å‰èŠ‚ç‚¹å¯¹è±¡æ·»åŠ åˆ°å¯¹åº”æ•°ç»„ä¸­
         array->PushBack(child_json, allocator);
     }
 }

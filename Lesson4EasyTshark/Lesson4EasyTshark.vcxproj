@@ -142,6 +142,7 @@
     <ClCompile Include="third_library\ip2region\xdb_search.cc" />
     <ClCompile Include="third_library\loguru\loguru.cpp" />
     <ClCompile Include="third_library\sqlite3\sqlite3.c" />
+    <ClCompile Include="TsharkDatabase.cpp" />
     <ClCompile Include="TsharkManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +197,8 @@
     <ClInclude Include="third_library\rapidxml\rapidxml_print.hpp" />
     <ClInclude Include="third_library\rapidxml\rapidxml_utils.hpp" />
     <ClInclude Include="third_library\sqlite3\sqlite3.h" />
+    <ClInclude Include="translator.hpp" />
+    <ClInclude Include="TsharkDatabase.h" />
     <ClInclude Include="TsharkManager.h" />
     <ClInclude Include="tshark_datatype.h" />
   </ItemGroup>

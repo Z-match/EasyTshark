@@ -17,7 +17,7 @@ class MiscUtil
 {
 public:
 	static std::string getRandomString(size_t length);
-	// 将XML转为JSON格式
+	// 灏哫ML杞负JSON鏍煎紡
 	static bool xml2JSON(std::string xmlContent, Document& outJsonDoc);
 	static std::string getDefaultDataDir();
 private:

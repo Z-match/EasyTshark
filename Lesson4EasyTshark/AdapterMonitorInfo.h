@@ -17,10 +17,10 @@ public:
         monitorTsharkPipe = nullptr;
         tsharkPid = 0;
     }
-    std::string adapterName;                            // Íø¿¨Ãû³Æ
-    std::map<long, long> flowTrendData;                 // Á÷Á¿Ç÷ÊÆÊı¾İ
-    std::shared_ptr<std::thread> monitorThread;         // ¸ºÔğ¼à¿Ø¸ÃÍø¿¨Êä³öµÄÏß³Ì
-    FILE* monitorTsharkPipe;                            // Ïß³ÌÓëtsharkÍ¨ĞÅµÄ¹ÜµÀ
-    PID_T tsharkPid;                                    // ¸ºÔğ²¶»ñ¸ÃÍø¿¨Êı¾İµÄtshark½ø³ÌPID
+    std::string adapterName;                            // ç½‘å¡åç§°
+    std::map<long, long> flowTrendData;                 // æµé‡è¶‹åŠ¿æ•°æ®
+    std::shared_ptr<std::thread> monitorThread;         // è´Ÿè´£ç›‘æ§è¯¥ç½‘å¡è¾“å‡ºçš„çº¿ç¨‹
+    FILE* monitorTsharkPipe;                            // çº¿ç¨‹ä¸tsharké€šä¿¡çš„ç®¡é“
+    PID_T tsharkPid;                                    // è´Ÿè´£æ•è·è¯¥ç½‘å¡æ•°æ®çš„tsharkè¿›ç¨‹PID
 };
 

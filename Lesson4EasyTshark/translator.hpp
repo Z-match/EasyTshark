@@ -5,21 +5,21 @@
 
 class Traslator {
 public:
-    // µİ¹é·­Òë showname ×Ö¶Î
+    // é€’å½’ç¿»è¯‘ showname å­—æ®µ
     void translateShowNameFields(rapidjson::Value& value, rapidjson::Document::AllocatorType& allocator) {
-        // Èç¹ûÊÇ¶ÔÏó£¬¼ì²é²¢·­Òë showname ×Ö¶Î
+        // å¦‚æœæ˜¯å¯¹è±¡ï¼Œæ£€æŸ¥å¹¶ç¿»è¯‘ showname å­—æ®µ
         if (value.IsObject()) {
             if (value.HasMember("showname") && value["showname"].IsString()) {
                 std::string showname = value["showname"].GetString();
 
-                // ±éÀú translationMap ²éÕÒ¾²Ì¬²¿·Ö²¢Ìæ»»
+                // éå† translationMap æŸ¥æ‰¾é™æ€éƒ¨åˆ†å¹¶æ›¿æ¢
                 for (const auto& pair : translationMap) {
                     const std::string& key = pair.first;
                     const std::string& translation = pair.second;
 
-                    // ¼ì²é×Ö¶ÎAÖĞÊÇ·ñ°üº¬translationMapÖĞµÄkey£¨¾²Ì¬²¿·Ö£©
+                    // æ£€æŸ¥å­—æ®µAä¸­æ˜¯å¦åŒ…å«translationMapä¸­çš„keyï¼ˆé™æ€éƒ¨åˆ†ï¼‰
                     if (showname.find(key) == 0) {
-                        // Ìæ»»¾²Ì¬²¿·Ö
+                        // æ›¿æ¢é™æ€éƒ¨åˆ†
                         showname.replace(0, key.length(), translation);
                         value["showname"].SetString(showname.c_str(), allocator);
                         break;
@@ -29,14 +29,14 @@ public:
             else if (value.HasMember("show") && value["show"].IsString()) {
                 std::string showname = value["show"].GetString();
 
-                // ±éÀú translationMap ²éÕÒ¾²Ì¬²¿·Ö²¢Ìæ»»
+                // éå† translationMap æŸ¥æ‰¾é™æ€éƒ¨åˆ†å¹¶æ›¿æ¢
                 for (const auto& pair : translationMap) {
                     const std::string& key = pair.first;
                     const std::string& translation = pair.second;
 
-                    // ¼ì²é×Ö¶ÎAÖĞÊÇ·ñ°üº¬translationMapÖĞµÄkey£¨¾²Ì¬²¿·Ö£©
+                    // æ£€æŸ¥å­—æ®µAä¸­æ˜¯å¦åŒ…å«translationMapä¸­çš„keyï¼ˆé™æ€éƒ¨åˆ†ï¼‰
                     if (showname.find(key) == 0) {
-                        // Ìæ»»¾²Ì¬²¿·Ö
+                        // æ›¿æ¢é™æ€éƒ¨åˆ†
                         showname.replace(0, key.length(), translation);
                         value["show"].SetString(showname.c_str(), allocator);
                         break;
@@ -44,105 +44,105 @@ public:
                 }
             }
 
-            // Èç¹ûÓĞ "field" ×Ö¶Î£¬µİ¹é´¦Àí
+            // å¦‚æœæœ‰ "field" å­—æ®µï¼Œé€’å½’å¤„ç†
             if (value.HasMember("field") && value["field"].IsArray()) {
-                // Ö±½ÓÒıÓÃ "field" Êı×éÖĞµÄÃ¿¸öÔªËØ½øĞĞµİ¹é·­Òë
+                // ç›´æ¥å¼•ç”¨ "field" æ•°ç»„ä¸­çš„æ¯ä¸ªå…ƒç´ è¿›è¡Œé€’å½’ç¿»è¯‘
                 rapidjson::Value& fieldArray = value["field"];
                 for (auto& field : fieldArray.GetArray()) {
-                    translateShowNameFields(field, allocator);  // µİ¹é´¦ÀíÃ¿¸ö field
+                    translateShowNameFields(field, allocator);  // é€’å½’å¤„ç†æ¯ä¸ª field
                 }
             }
         }
-        // Èç¹ûÊÇÊı×é£¬µİ¹é±éÀúÃ¿¸öÔªËØ
+        // å¦‚æœæ˜¯æ•°ç»„ï¼Œé€’å½’éå†æ¯ä¸ªå…ƒç´ 
         else if (value.IsArray()) {
             for (auto& item : value.GetArray()) {
-                translateShowNameFields(item, allocator);  // µİ¹é´¦ÀíÃ¿¸öÔªËØ
+                translateShowNameFields(item, allocator);  // é€’å½’å¤„ç†æ¯ä¸ªå…ƒç´ 
             }
         }
     }
 
 private:
     std::map<std::string, std::string> translationMap = {
-    {"General information", "³£¹æĞÅÏ¢"},
-    {"Frame Number", "Ö¡±àºÅ"},
-    {"Captured Length", "²¶»ñ³¤¶È"},
-    {"Captured Time", "²¶»ñÊ±¼ä"},
-    {"Section number", "½ÚºÅ"},
-    {"Interface id", "½Ó¿Ú id"},
-    {"Interface name", "½Ó¿ÚÃû³Æ"},
-    {"Encapsulation type", "·â×°ÀàĞÍ"},
-    {"Arrival Time", "µ½´ïÊ±¼ä"},
-    {"UTC Arrival Time", "UTCµ½´ïÊ±¼ä"},
-    {"Epoch Arrival Time", "¼ÍÔªµ½´ïÊ±¼ä"},
-    {"Time shift for this packet", "¸ÃÊı¾İ°üµÄÊ±¼äÆ«ÒÆ"},
-    {"Time delta from previous captured frame", "ÓëÉÏÒ»¸ö²¶»ñÖ¡µÄÊ±¼ä²î"},
-    {"Time delta from previous displayed frame", "ÓëÉÏÒ»¸öÏÔÊ¾Ö¡µÄÊ±¼ä²î"},
-    {"Time since reference or first frame", "×Ô²Î¿¼Ö¡»òµÚÒ»Ö¡ÒÔÀ´µÄÊ±¼ä"},
-    {"Frame Number", "Ö¡±àºÅ"},
-    {"Frame Length", "Ö¡³¤¶È"},
-    {"Capture Length", "²¶»ñ³¤¶È"},
-    {"Frame is marked", "Ö¡±ê¼Ç"},
-    {"Frame is ignored", "Ö¡ºöÂÔ"},
-    {"Frame", "Ö¡"},
-    {"Protocols in frame", "Ö¡ÖĞµÄĞ­Òé"},
-    {"Ethernet II", "ÒÔÌ«Íø II"},
-    {"Destination", "Ä¿µÄµØÖ·"},
-    {"Address Resolution Protocol", "ARPµØÖ·½âÎöµØÖ·"},
-    {"Address (resolved)", "µØÖ·£¨½âÎöºó£©"},
-    {"Type", "ÀàĞÍ"},
-    {"Stream index", "Á÷Ë÷Òı"},
-    {"Internet Protocol Version 4", "»¥ÁªÍøĞ­Òé°æ±¾ 4"},
-    {"Internet Protocol Version 6", "»¥ÁªÍøĞ­Òé°æ±¾ 6"},
-    {"Internet Control Message Protocol", "»¥ÁªÍø¿ØÖÆÏûÏ¢Ğ­ÒéICMP"},
-    {"Version", "°æ±¾"},
-    {"Header Length", "Í·²¿³¤¶È"},
-    {"Differentiated Services Field", "²î·Ö·şÎñ×Ö¶Î"},
-    {"Total Length", "×Ü³¤¶È"},
-    {"Identification", "±êÊ¶·û"},
-    {"Flags", "±êÖ¾"},
-    {"Time to Live", "Éú´æÊ±¼ä"},
-    {"Transmission Control Protocol", "TCP´«Êä¿ØÖÆĞ­Òé"},
-    {"User Datagram Protocol", "UDPÓÃ»§Êı¾İ°üĞ­Òé"},
-    {"Domain Name System", "DNSÓòÃû½âÎöÏµÍ³"},
-    {"Header Checksum", "Í·²¿Ğ£ÑéºÍ"},
-    {"Header checksum status", "Ğ£ÑéºÍ×´Ì¬"},
-    {"Source Address", "Ô´µØÖ·"},
-    {"Destination Address", "Ä¿µÄµØÖ·"},
-    {"Source Port", "Ô´¶Ë¿Ú"},
-    {"Destination Port", "Ä¿µÄ¶Ë¿Ú"},
-    {"Next Sequence Number", "ÏÂÒ»¸öĞòÁĞºÅ"},
-    {"Sequence Number", "ĞòÁĞºÅ"},
-    {"Acknowledgment Number", "È·ÈÏºÅ"},
-    {"Acknowledgment number", "È·ÈÏºÅ"},
-    {"TCP Segment Len", "TCP¶Î³¤¶È"},
-    {"Conversation completeness", "»á»°ÍêÕûĞÔ"},
-    {"Window size scaling factor", "´°¿ÚËõ·ÅÒò×Ó"},
-    {"Calculated window size", "¼ÆËã´°¿Ú´óĞ¡"},
-    {"Window", "´°¿Ú"},
-    {"Urgent Pointer", "½ô¼±Ö¸Õë"},
-    {"Checksum:", "Ğ£ÑéºÍ:"},
-    {"TCP Option - Maximum segment size", "TCPÑ¡Ïî - ×î´ó¶Î´óĞ¡"},
-    {"Kind", "ÖÖÀà"},
-    {"MSS Value", "MSSÖµ"},
-    {"TCP Option - Window scale", "TCPÑ¡Ïî - ´°¿ÚËõ·Å"},
-    {"Shift count", "ÒÆÎ»¼ÆÊı"},
-    {"Multiplier", "±¶Êı"},
-    {"TCP Option - Timestamps", "TCPÑ¡Ïî - Ê±¼ä´Á"},
-    {"TCP Option - SACK permitted", "TCPÑ¡Ïî - SACK ÔÊĞí"},
-    {"TCP Option - End of Option List", "TCPÑ¡Ïî - Ñ¡ÏîÁĞ±í½áÊø"},
-    {"Options", "Ñ¡Ïî"},
-    {"TCP Option - No-Operation", "TCPÑ¡Ïî - ÎŞ²Ù×÷"},
-    {"Timestamps", "Ê±¼ä´Á"},
-    {"Time since first frame in this TCP stream", "×ÔµÚÒ»Ö¡ÒÔÀ´µÄÊ±¼ä"},
-    {"Time since previous frame in this TCP stream", "ÓëÉÏÒ»¸öÖ¡µÄÊ±¼ä²î"},
-    {"Protocol:", "Ğ­Òé:"},
-    {"Source:", "Ô´µØÖ·:"},
-    {"Length:", "³¤¶È:"},
-    {"Checksum status", "Ğ£ÑéºÍ×´Ì¬"},
-    {"Checksum Status", "Ğ£ÑéºÍ×´Ì¬"},
-    {"TCP payload", "TCPÔØºÉ"},
-    {"UDP payload", "UDPÔØºÉ"},
-    {"Hypertext Transfer Protocol", "³¬ÎÄ±¾´«ÊäĞ­ÒéHTTP"},
-    {"Transport Layer Security", "´«Êä²ã°²È«Ğ­ÒéTLS"}
+    {"General information", "å¸¸è§„ä¿¡æ¯"},
+    {"Frame Number", "å¸§ç¼–å·"},
+    {"Captured Length", "æ•è·é•¿åº¦"},
+    {"Captured Time", "æ•è·æ—¶é—´"},
+    {"Section number", "èŠ‚å·"},
+    {"Interface id", "æ¥å£ id"},
+    {"Interface name", "æ¥å£åç§°"},
+    {"Encapsulation type", "å°è£…ç±»å‹"},
+    {"Arrival Time", "åˆ°è¾¾æ—¶é—´"},
+    {"UTC Arrival Time", "UTCåˆ°è¾¾æ—¶é—´"},
+    {"Epoch Arrival Time", "çºªå…ƒåˆ°è¾¾æ—¶é—´"},
+    {"Time shift for this packet", "è¯¥æ•°æ®åŒ…çš„æ—¶é—´åç§»"},
+    {"Time delta from previous captured frame", "ä¸ä¸Šä¸€ä¸ªæ•è·å¸§çš„æ—¶é—´å·®"},
+    {"Time delta from previous displayed frame", "ä¸ä¸Šä¸€ä¸ªæ˜¾ç¤ºå¸§çš„æ—¶é—´å·®"},
+    {"Time since reference or first frame", "è‡ªå‚è€ƒå¸§æˆ–ç¬¬ä¸€å¸§ä»¥æ¥çš„æ—¶é—´"},
+    {"Frame Number", "å¸§ç¼–å·"},
+    {"Frame Length", "å¸§é•¿åº¦"},
+    {"Capture Length", "æ•è·é•¿åº¦"},
+    {"Frame is marked", "å¸§æ ‡è®°"},
+    {"Frame is ignored", "å¸§å¿½ç•¥"},
+    {"Frame", "å¸§"},
+    {"Protocols in frame", "å¸§ä¸­çš„åè®®"},
+    {"Ethernet II", "ä»¥å¤ªç½‘ II"},
+    {"Destination", "ç›®çš„åœ°å€"},
+    {"Address Resolution Protocol", "ARPåœ°å€è§£æåœ°å€"},
+    {"Address (resolved)", "åœ°å€ï¼ˆè§£æåï¼‰"},
+    {"Type", "ç±»å‹"},
+    {"Stream index", "æµç´¢å¼•"},
+    {"Internet Protocol Version 4", "äº’è”ç½‘åè®®ç‰ˆæœ¬ 4"},
+    {"Internet Protocol Version 6", "äº’è”ç½‘åè®®ç‰ˆæœ¬ 6"},
+    {"Internet Control Message Protocol", "äº’è”ç½‘æ§åˆ¶æ¶ˆæ¯åè®®ICMP"},
+    {"Version", "ç‰ˆæœ¬"},
+    {"Header Length", "å¤´éƒ¨é•¿åº¦"},
+    {"Differentiated Services Field", "å·®åˆ†æœåŠ¡å­—æ®µ"},
+    {"Total Length", "æ€»é•¿åº¦"},
+    {"Identification", "æ ‡è¯†ç¬¦"},
+    {"Flags", "æ ‡å¿—"},
+    {"Time to Live", "ç”Ÿå­˜æ—¶é—´"},
+    {"Transmission Control Protocol", "TCPä¼ è¾“æ§åˆ¶åè®®"},
+    {"User Datagram Protocol", "UDPç”¨æˆ·æ•°æ®åŒ…åè®®"},
+    {"Domain Name System", "DNSåŸŸåè§£æç³»ç»Ÿ"},
+    {"Header Checksum", "å¤´éƒ¨æ ¡éªŒå’Œ"},
+    {"Header checksum status", "æ ¡éªŒå’ŒçŠ¶æ€"},
+    {"Source Address", "æºåœ°å€"},
+    {"Destination Address", "ç›®çš„åœ°å€"},
+    {"Source Port", "æºç«¯å£"},
+    {"Destination Port", "ç›®çš„ç«¯å£"},
+    {"Next Sequence Number", "ä¸‹ä¸€ä¸ªåºåˆ—å·"},
+    {"Sequence Number", "åºåˆ—å·"},
+    {"Acknowledgment Number", "ç¡®è®¤å·"},
+    {"Acknowledgment number", "ç¡®è®¤å·"},
+    {"TCP Segment Len", "TCPæ®µé•¿åº¦"},
+    {"Conversation completeness", "ä¼šè¯å®Œæ•´æ€§"},
+    {"Window size scaling factor", "çª—å£ç¼©æ”¾å› å­"},
+    {"Calculated window size", "è®¡ç®—çª—å£å¤§å°"},
+    {"Window", "çª—å£"},
+    {"Urgent Pointer", "ç´§æ€¥æŒ‡é’ˆ"},
+    {"Checksum:", "æ ¡éªŒå’Œ:"},
+    {"TCP Option - Maximum segment size", "TCPé€‰é¡¹ - æœ€å¤§æ®µå¤§å°"},
+    {"Kind", "ç§ç±»"},
+    {"MSS Value", "MSSå€¼"},
+    {"TCP Option - Window scale", "TCPé€‰é¡¹ - çª—å£ç¼©æ”¾"},
+    {"Shift count", "ç§»ä½è®¡æ•°"},
+    {"Multiplier", "å€æ•°"},
+    {"TCP Option - Timestamps", "TCPé€‰é¡¹ - æ—¶é—´æˆ³"},
+    {"TCP Option - SACK permitted", "TCPé€‰é¡¹ - SACK å…è®¸"},
+    {"TCP Option - End of Option List", "TCPé€‰é¡¹ - é€‰é¡¹åˆ—è¡¨ç»“æŸ"},
+    {"Options", "é€‰é¡¹"},
+    {"TCP Option - No-Operation", "TCPé€‰é¡¹ - æ— æ“ä½œ"},
+    {"Timestamps", "æ—¶é—´æˆ³"},
+    {"Time since first frame in this TCP stream", "è‡ªç¬¬ä¸€å¸§ä»¥æ¥çš„æ—¶é—´"},
+    {"Time since previous frame in this TCP stream", "ä¸ä¸Šä¸€ä¸ªå¸§çš„æ—¶é—´å·®"},
+    {"Protocol:", "åè®®:"},
+    {"Source:", "æºåœ°å€:"},
+    {"Length:", "é•¿åº¦:"},
+    {"Checksum status", "æ ¡éªŒå’ŒçŠ¶æ€"},
+    {"Checksum Status", "æ ¡éªŒå’ŒçŠ¶æ€"},
+    {"TCP payload", "TCPè½½è·"},
+    {"UDP payload", "UDPè½½è·"},
+    {"Hypertext Transfer Protocol", "è¶…æ–‡æœ¬ä¼ è¾“åè®®HTTP"},
+    {"Transport Layer Security", "ä¼ è¾“å±‚å®‰å…¨åè®®TLS"}
     };
 };

@@ -6,11 +6,11 @@
 
 struct Packet {
     int frame_number;
-    std::string time;
-    std::string src_mac;
-    std::string dst_mac;
+    double time;
     uint32_t cap_len;
     uint32_t len;
+    std::string src_mac;
+    std::string dst_mac;
     std::string src_ip;
     std::string src_location;
     uint16_t src_port;
