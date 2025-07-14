@@ -132,24 +132,66 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AdapterMonitorInfo.cpp" />
+    <ClCompile Include="AdaptorController.cpp" />
+    <ClCompile Include="BaseController.cpp" />
+    <ClCompile Include="CountryStatsInfo.cpp" />
+    <ClCompile Include="DataStreamCountInfo.cpp" />
+    <ClCompile Include="DataStreamInfo.cpp" />
+    <ClCompile Include="DataStreamItem.cpp" />
+    <ClCompile Include="FiveTuple.cpp" />
+    <ClCompile Include="FiveTupleHash.cpp" />
     <ClCompile Include="hexInfoRead.cpp" />
     <ClCompile Include="ip2locationTest.cpp" />
     <ClCompile Include="ip2region_util.cpp" />
+    <ClCompile Include="IPStatsInfo.cpp" />
     <ClCompile Include="Lesson4EasyTshark.cpp" />
     <ClCompile Include="MiscUtil.cpp" />
+    <ClCompile Include="PacketController.cpp" />
+    <ClCompile Include="PacketSQL.cpp" />
+    <ClCompile Include="PageAndOrder.cpp" />
+    <ClCompile Include="PageHelper.cpp" />
     <ClCompile Include="ProcessUtil.cpp" />
+    <ClCompile Include="ProtoStatsInfo.cpp" />
+    <ClCompile Include="QueryCondition.cpp" />
+    <ClCompile Include="Session.cpp" />
+    <ClCompile Include="SessionController.cpp" />
+    <ClCompile Include="SessionSQL.cpp" />
+    <ClCompile Include="StatsController.cpp" />
+    <ClCompile Include="StatsSQL.cpp" />
     <ClCompile Include="third_library\ip2region\xdb_bench.cc" />
     <ClCompile Include="third_library\ip2region\xdb_search.cc" />
     <ClCompile Include="third_library\loguru\loguru.cpp" />
     <ClCompile Include="third_library\sqlite3\sqlite3.c" />
     <ClCompile Include="TsharkDatabase.cpp" />
+    <ClCompile Include="TsharkError.cpp" />
     <ClCompile Include="TsharkManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdapterMonitorInfo.h" />
+    <ClInclude Include="AdaptorController.h" />
+    <ClInclude Include="BaseController.h" />
+    <ClInclude Include="CountryStatsInfo.h" />
+    <ClInclude Include="DataStreamCountInfo.h" />
+    <ClInclude Include="DataStreamInfo.h" />
+    <ClInclude Include="DataStreamItem.h" />
+    <ClInclude Include="FiveTuple.h" />
+    <ClInclude Include="FiveTupleHash.h" />
     <ClInclude Include="ip2region_util.h" />
+    <ClInclude Include="IPStatsInfo.h" />
     <ClInclude Include="MiscUtil.h" />
+    <ClInclude Include="PacketController.h" />
+    <ClInclude Include="PacketSQL.h" />
+    <ClInclude Include="PageAndOrder.h" />
+    <ClInclude Include="PageHelper.h" />
     <ClInclude Include="ProcessUtil.h" />
+    <ClInclude Include="ProtoList.h" />
+    <ClInclude Include="ProtoStatsInfo.h" />
+    <ClInclude Include="QueryCondition.h" />
+    <ClInclude Include="Session.h" />
+    <ClInclude Include="SessionController.h" />
+    <ClInclude Include="SessionSQL.h" />
+    <ClInclude Include="StatsController.h" />
+    <ClInclude Include="StatsSQL.h" />
     <ClInclude Include="third_library\httplib\httplib.h" />
     <ClInclude Include="third_library\ip2region\xdb_bench.h" />
     <ClInclude Include="third_library\ip2region\xdb_search.h" />
@@ -199,6 +241,7 @@
     <ClInclude Include="third_library\sqlite3\sqlite3.h" />
     <ClInclude Include="translator.hpp" />
     <ClInclude Include="TsharkDatabase.h" />
+    <ClInclude Include="TsharkError.h" />
     <ClInclude Include="TsharkManager.h" />
     <ClInclude Include="tshark_datatype.h" />
   </ItemGroup>

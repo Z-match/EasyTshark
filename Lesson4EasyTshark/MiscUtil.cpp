@@ -83,5 +83,68 @@ void MiscUtil::xml_to_json_recursive(Value& json, xml_node<>* node, Document::Al
 }
 
 std::string MiscUtil::getDefaultDataDir() {
-    return "D:/Code/c++/Lesson4EasyTshark/Lesson4EasyTshark/packets/";
+    static std::string dir = "";
+    if (!dir.empty()) {
+        return dir;
+    }
+#ifdef _WIN32
+    dir = std::string(std::getenv("APPDATA")) + "\\easytshark\\";
+#else
+    dir = std::string(std::getenv("HOME")) + "/easytshark/";
+#endif
+
+    CreateDirectoryA(dir.c_str(), NULL);
+    return dir;
+    //return "D:/Code/c++/Lesson4EasyTshark/Lesson4EasyTshark/packets/";
 }
+
+bool MiscUtil::fileExists(const std::string& filePath) {
+    struct stat buffer;
+    return (stat(filePath.c_str(), &buffer) == 0);
+}
+
+std::string MiscUtil::getPcapNameByCurrentTimestamp(bool isFullPath) {
+    // 获取当前时间
+    std::time_t now = std::time(nullptr);
+    std::tm* localTime = std::localtime(&now);
+
+    // 格式化文件名
+    char buffer[64];
+    std::strftime(buffer, sizeof(buffer), "easytshark_%Y-%m-%d_%H-%M-%S.pcap", localTime);
+
+    return isFullPath ? getDefaultDataDir() + std::string(buffer) : std::string(buffer);
+}
+
+// 将字符串按分隔符分割成字符串向量
+std::vector<std::string> MiscUtil::splitString(const std::string& str, char delimiter) {
+    std::vector<std::string> result;
+    std::stringstream ss(str);
+    std::string item;
+
+    while (std::getline(ss, item, delimiter)) {
+        if (!item.empty()) {
+            result.push_back(item);
+        }
+    }
+
+    return result;
+}
+
+// 将字符串向量转换为整数向量
+std::vector<int> MiscUtil::toIntVector(const std::vector<std::string>& strVec) {
+    std::vector<int> result;
+    result.reserve(strVec.size());
+
+    for (const auto& str : strVec) {
+        try {
+            result.push_back(std::stoi(str));
+        }
+        catch (const std::exception& e) {
+            // 转换失败时跳过或处理错误
+            continue;
+        }
+    }
+
+    return result;
+}
+

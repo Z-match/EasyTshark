@@ -54,6 +54,69 @@
     <ClCompile Include="TsharkDatabase.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="QueryCondition.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TsharkError.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketSQL.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AdaptorController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Session.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FiveTuple.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FiveTupleHash.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SessionSQL.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SessionController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PageAndOrder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PageHelper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IPStatsInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StatsController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StatsSQL.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProtoStatsInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CountryStatsInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStreamItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStreamCountInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStreamInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="third_library\httplib\httplib.h">
@@ -219,6 +282,72 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="TsharkDatabase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="QueryCondition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TsharkError.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketSQL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AdaptorController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Session.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FiveTuple.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FiveTupleHash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SessionSQL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SessionController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PageAndOrder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PageHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IPStatsInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StatsController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StatsSQL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtoStatsInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CountryStatsInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtoList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStreamItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStreamCountInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStreamInfo.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

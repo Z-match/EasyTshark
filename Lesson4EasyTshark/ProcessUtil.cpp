@@ -177,3 +177,36 @@ bool ProcessUtil::Exec(std::string cmdline) {
     return std::system(cmdline.c_str()) == 0;
 #endif
 }
+
+std::string ProcessUtil::getExecutableDir() {
+    char path[MAX_PATH];
+    GetModuleFileNameA(nullptr, path, MAX_PATH);
+
+    // 手动提取目录部分
+    std::string exePath(path);
+    size_t lastSlash = exePath.find_last_of("\\/");
+    if (lastSlash != std::string::npos) {
+        return exePath.substr(0, lastSlash);
+    }
+    return ".";  // 如果找不到路径分隔符，返回当前目录
+}
+
+bool ProcessUtil::isProcessRunning(PID_T pid) {
+#ifdef _WIN32
+    HANDLE process = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, pid);
+    if (process == NULL) {
+        return false;
+    }
+    DWORD exitCode;
+    if (GetExitCodeProcess(process, &exitCode)) {
+        CloseHandle(process);
+        return (exitCode == STILL_ACTIVE);
+    }
+    CloseHandle(process);
+    return false;
+#else
+    // On Unix-like systems, sending signal 0 to a process checks if it exists
+    int ret = kill(pid, 0);
+    return (ret == 0);
+#endif
+}

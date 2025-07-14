@@ -1,8 +1,8 @@
 #pragma once
-#include "rapidjson/document.h"
-#include "rapidjson/writer.h"
-#include "rapidjson/prettywriter.h"
-#include "rapidjson/stringbuffer.h"
+//#include "rapidjson/document.h"
+//#include "rapidjson/writer.h"
+//#include "rapidjson/prettywriter.h"
+//#include "rapidjson/stringbuffer.h"
 #include "ip2region_util.h"
 
 #include <cstdio>
@@ -20,6 +20,7 @@
 #include <cmath>
 #include <set>
 #include <thread>
+#include <WinSock2.h>
 #include <Windows.h>
 #include "ProcessUtil.h"
 #include <map>
@@ -29,6 +30,13 @@
 #include "MiscUtil.h"
 #include "translator.hpp"
 #include "TsharkDatabase.h"
+#include <thread>
+#include <chrono>
+#include "Session.h"
+#include "FiveTupleHash.h"
+#include "DataStreamCountInfo.h"
+#include "DataStreamItem.h"
+
 
 #ifdef _WIN32
     // 使用宏来处理Windows和Unix的不同popen实现
@@ -39,6 +47,12 @@ typedef DWORD PID_T;
 typedef pid_t PID_T;
 #endif
 
+enum WORK_STATUS {
+    STATUS_IDLE = 0,                    // 空闲状态
+    STATUS_ANALYSIS_FILE = 1,           // 离线分析文件中
+    STATUS_CAPTURING = 2,               // 在线采集抓包中
+    STATUS_MONITORING = 3               // 监控网卡流量中
+};
 
 class TsharkManager
 {
@@ -80,7 +94,40 @@ public:
     void getAdaptersFlowTrendData(std::map<std::string, std::map<long, long>>& flowTrendData);
 
     // 获取指定数据包的详情内容
-    bool getPacketDetailInfo(uint32_t frameNumber, std::string& result);
+    bool getPacketDetailInfo(uint32_t frameNumber, rapidjson::Document& detailJson);
+
+    // 转发调用数据包的接口
+    void queryPackets(QueryCondition& queryConditon, std::vector<std::shared_ptr<Packet>>& packets, int& total);
+
+    // 将数据包格式转换为旧的pcap格式
+    bool convertToPcap(const std::string& inputFile, const std::string& outputFile);
+
+    // 获取当前工作状态
+    WORK_STATUS getWorkStatus();
+
+    // 对TsharkManager的内部相关变量进行一个重置
+    void reset();
+
+    // 打印所有会话信息
+    void printAllSessions();
+
+    // 转发调用会话的接口
+    void querySessions(QueryCondition& condition, std::vector<std::shared_ptr<Session>>& sessionList, int& total);
+
+    bool getIPStatsList(QueryCondition& condition, std::vector<std::shared_ptr<IPStatsInfo>>& sessionList, int& total);
+
+    bool getProtoStatsList(QueryCondition& condition,
+        std::vector<std::shared_ptr<ProtoStatsInfo>>& protoStatsList,
+        int& total);
+
+    bool getCountryStatsList(QueryCondition& condition,
+        std::vector<std::shared_ptr<CountryStatsInfo>>& countryStatsList,
+        int& total);
+
+    // 获取会话数据流
+    DataStreamCountInfo getSessionDataStream(uint32_t sessionId, std::vector<DataStreamItem>& dataStreamList);
+
+    bool savePacket(std::string savePath);
 
 private:
     // 解析每一行
@@ -100,6 +147,7 @@ private:
     std::string tsharkPath;
     std::string editcapPath;
     IP2RegionUtil ip2RegionUtil;
+    std::string workDir;
 
     // 当前分析的文件路径
     std::string currentFilePath;
@@ -136,5 +184,29 @@ private:
 
     // 数据库存储
     std::shared_ptr<TsharkDatabase> storage;
-};
 
+    // 工作状态
+    WORK_STATUS workStatus = STATUS_IDLE;
+    std::recursive_mutex workStatusLock;
+
+    // 会话表
+    std::unordered_map<FiveTuple, std::shared_ptr<Session>, FiveTupleHash> sessionMap;
+
+    std::map<uint8_t, std::string> ipProtoMap = {
+        {1, "ICMP"},
+        {2, "IGMP"},
+        {6, "TCP"},
+        {17, "UDP"},
+        {47, "GRE"},
+        {50, "ESP"},
+        {51, "AH"},
+        {88, "EIGRP"},
+        {89, "OSPF"},
+        {132, "SCTP"}
+    };
+
+    // 等待存储入库的会话列表
+    std::unordered_set<std::shared_ptr<Session>> sessionSetTobeStore;
+
+    std::map<uint32_t, std::shared_ptr<Session>> sessionIdMap;
+};

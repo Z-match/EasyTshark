@@ -1,11 +1,64 @@
-﻿  Lesson4EasyTshark.cpp
-  TsharkDatabase.cpp
-  TsharkManager.cpp
-D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(279,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(281,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(329,74): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(430,44): warning C4244: “=”: 从“time_t”转换到“long”，可能丢失数据
-D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(511,38): warning C4101: “e”: 未引用的局部变量
-D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(549,18): warning C4244: “初始化”: 从“time_t”转换到“long”，可能丢失数据
-  正在生成代码...
+﻿  TsharkManager.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\SessionSQL.h(1,1): warning C4828: 文件包含在偏移 0x553 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\SessionSQL.h(1,1): warning C4828: 文件包含在偏移 0x554 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\SessionSQL.h(1,1): warning C4828: 文件包含在偏移 0x55c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\SessionSQL.h(1,1): warning C4828: 文件包含在偏移 0x55e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\SessionSQL.h(1,1): warning C4828: 文件包含在偏移 0x55f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\SessionSQL.h(1,1): warning C4828: 文件包含在偏移 0x953 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\SessionSQL.h(1,1): warning C4828: 文件包含在偏移 0x955 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\SessionSQL.h(1,1): warning C4828: 文件包含在偏移 0x956 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\SessionSQL.h(1,1): warning C4828: 文件包含在偏移 0x95f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\SessionSQL.h(1,1): warning C4828: 文件包含在偏移 0x960 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\DataStreamCountInfo.h(1,1): warning C4828: 文件包含在偏移 0x29 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\DataStreamCountInfo.h(1,1): warning C4828: 文件包含在偏移 0x2b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\DataStreamCountInfo.h(1,1): warning C4828: 文件包含在偏移 0x2c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\DataStreamCountInfo.h(1,1): warning C4828: 文件包含在偏移 0x2e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\DataStreamCountInfo.h(1,1): warning C4828: 文件包含在偏移 0x32 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\DataStreamCountInfo.h(1,1): warning C4828: 文件包含在偏移 0x34 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\DataStreamCountInfo.h(1,1): warning C4828: 文件包含在偏移 0x36 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“TsharkManager.cpp”)
+  
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(315,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(317,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(372,74): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(481,44): warning C4244: “=”: 从“time_t”转换到“long”，可能丢失数据
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(567,38): warning C4101: “e”: 未引用的局部变量
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(610,18): warning C4244: “初始化”: 从“time_t”转换到“long”，可能丢失数据
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(765,53): warning C4267: “=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(964,44): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(989,65): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
+D:\Code\c++\Lesson4EasyTshark\Lesson4EasyTshark\TsharkManager.cpp(996,65): warning C4267: “+=”: 从“size_t”转换到“uint32_t”，可能丢失数据
   Lesson4EasyTshark.vcxproj -> D:\Code\c++\Lesson4EasyTshark\x64\Debug\Lesson4EasyTshark.exe

@@ -1,84 +1,123 @@
 ﻿#include "TsharkManager.h"
+#include <WinSock2.h>
 #include <Windows.h>
 #include "ProcessUtil.h"
+#include "PacketController.h"
+#include <httplib/httplib.h>
+#include "AdaptorController.h"
+#include "SessionController.h"
+#include "StatsController.h"
+
+void Initlog(int argc, char* argv[]) {
+    loguru::init(argc, argv);
+    loguru::add_file("logs.txt", loguru::Append, loguru::Verbosity_MAX);
+}
+
+httplib::Server::HandlerResponse before_request(const httplib::Request& req, httplib::Response& res) {
+    LOG_F(INFO, "Request received for %s", req.path.c_str());
+
+    // 提取分页参数
+    PageAndOrder* pageAndOrder = PageHelper::getPageAndOrder();
+    pageAndOrder->pageNum = BaseController::getIntParam(req, "pageNum", 1);
+    pageAndOrder->pageSize = BaseController::getIntParam(req, "pageSize", 100);
+    pageAndOrder->orderBy = BaseController::getStringParam(req, "orderBy", "");
+    pageAndOrder->descOrAsc = BaseController::getStringParam(req, "descOrAsc", "asc");
+    return httplib::Server::HandlerResponse::Unhandled;
+}
+
+void after_response(const httplib::Request& req, httplib::Response& res) {
+    if (req.method != "OPTIONS") {
+        res.set_header("Access-Control-Allow-Origin", "http://localhost:3000");
+        res.set_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, DELETE, PUT");
+        res.set_header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+        res.set_header("Access-Control-Allow-Credentials", "true");
+    }
+    LOG_F(INFO, "Received response with status %d", res.status);
+}
 
 int main(int argc, char* argv[]) {
+
 #ifdef _WIN32
     SetConsoleOutputCP(CP_UTF8);
 #else
     setlocale(LC_ALL, "zh_CN.UTF-8");
 #endif // _WIN32
 
-    loguru::init(argc, argv);
-    loguru::add_file("logs.txt", loguru::Append, loguru::Verbosity_MAX);
+    Initlog(argc, argv);
 
-    TsharkManager tsharkManager("D:/Code/c++/Lesson4EasyTshark/Lesson4EasyTshark/");
-    //tsharkManager.analysisFile("D:/Code/c++/Lesson4EasyTshark/packets.pcap");
-    //std::string analysis_file;
-    //LOG_F(INFO, "请输入要分析的PCAP文件路径：");
-    //std::cin >> analysis_file;
-    //tsharkManager.analysisFile(analysis_file);
-    //tsharkManager.printAllPackets();
-
-    //std::vector<AdapterInfo> adaptors = tsharkManager.getNetworkAdapters();
-    //for (auto item : adaptors) {
-    //    LOG_F(INFO, "网卡[%d]: name[%s] remark[%s]", item.id, item.name.c_str(), item.remark.c_str());
-    //}
-
-    tsharkManager.startCapture("WLAN 3");
-
-    // 主线程进入命令等待停止抓包
-    std::string input;
-    while (true) {
-        std::cout << "请输入q退出抓包：";
-        std::cin >> input;
-        if (input == "q") {
-            tsharkManager.stopCapture();
-            break;
-        }
+    // 提取UI进程参数
+    std::string paramName = "--uipid=";
+    if (argc < 2 || strstr(argv[1], paramName.c_str()) == nullptr) {
+        LOG_F(ERROR, "usage: tshark_server --uipid=xxx");
+        return -1;
     }
 
-    // 打印所有捕获到的数据包信息
-    tsharkManager.printAllPackets();
+    std::string pidParam = argv[1];
+    auto pos1 = pidParam.find(paramName) + paramName.size();
+    auto pos2 = pidParam.find(" ", pos1);
+    PID_T pid = std::stoi(pidParam.substr(pos1, pos2));
+    if (!ProcessUtil::isProcessRunning(pid)) {
+        LOG_F(ERROR, "UI进程不存在，tshark_server将退出");
+        return -1;
+    }
 
-    //// 启动监控
-    //tsharkManager.startMonitorAdaptersFlowTrend();
+    // 启动UI监控线程
+    std::thread uiMonitorThread([&]() {
+        while (true) {
+            if (!ProcessUtil::isProcessRunning(pid)) {
+                LOG_F(INFO, "检测到UI进程已退出");
+                return;
+            }
+            std::this_thread::sleep_for(std::chrono::seconds(5));
+        }
+        });
 
-    //// 睡眠10秒，等待监控网卡数据
-    //std::this_thread::sleep_for(std::chrono::seconds(60));
+    std::string currentExePath = ProcessUtil::getExecutableDir();
+    std::cout << currentExePath << std::endl;
+    auto tsharkManager = std::make_shared<TsharkManager>(currentExePath);
+    httplib::Server server;
+    server.Options(".*", [](const httplib::Request& req, httplib::Response& res) {
+        res.set_header("Access-Control-Allow-Origin", "http://localhost:3000");
+        res.set_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, DELETE, PUT");
+        res.set_header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+        res.set_header("Access-Control-Allow-Credentials", "true");
+        res.status = 200;
+        });
+    //auto tsharkManager = std::make_shared<TsharkManager>("D:/Code/c++/Lesson4EasyTshark/Lesson4EasyTshark/");
+    //tsharkManager->analysisFile("D:/Code/c++/Lesson4EasyTshark/Lesson4EasyTshark/capture.pcap");
+    //tsharkManager->printAllSessions();
 
-    //// 读取监控到的数据
-    //std::map<std::string, std::map<long, long>> trendData;
-    //tsharkManager.getAdaptersFlowTrendData(trendData);
+    // 创建Controller并注册路由
+    std::vector<std::shared_ptr<BaseController>> controllerList;
+    controllerList.push_back(std::make_shared<PacketController>(server, tsharkManager));
+    controllerList.push_back(std::make_shared<SessionController>(server, tsharkManager));
+    controllerList.push_back(std::make_shared<AdaptorController>(server, tsharkManager));
+    controllerList.push_back(std::make_shared<StatsController>(server, tsharkManager));
 
-    //// 停止监控
-    //tsharkManager.stopMonitorAdaptersFlowTrend();
+    for (auto controller : controllerList) {
+        controller->registerRoute();
+    }
 
-    //// 把获取到的数据打印输出
-    //rapidjson::Document resDoc;
-    //rapidjson::Document::AllocatorType& allocator = resDoc.GetAllocator();
-    //resDoc.SetObject();
-    //rapidjson::Value dataObject(rapidjson::kObjectType);
-    //for (const auto& adaptorItem : trendData) {
-    //    rapidjson::Value adaptorDataList(rapidjson::kArrayType);
-    //    for (const auto& timeItem : adaptorItem.second) {
-    //        rapidjson::Value timeObj(rapidjson::kObjectType);
-    //        timeObj.AddMember("time", (unsigned int)timeItem.first, allocator);
-    //        timeObj.AddMember("bytes", (unsigned int)timeItem.second, allocator);
-    //        adaptorDataList.PushBack(timeObj, allocator);
-    //    }
+    server.set_pre_routing_handler(before_request);
+    server.set_post_routing_handler(after_response);
 
-    //    dataObject.AddMember(rapidjson::StringRef(adaptorItem.first.c_str()), adaptorDataList, allocator);
-    //}
+    // 启动服务器
+    // 在另一个线程中启动HTTP服务
+    std::thread serverThread([&]() {
+        LOG_F(INFO, "tshark_server is running on http://127.0.0.1:8080");
+        server.listen("127.0.0.1", 8080);
+        });
 
-    //resDoc.AddMember("data", dataObject, allocator);
 
-    //// 序列化为 JSON 字符串
-    //rapidjson::StringBuffer buffer;
-    //rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
-    //resDoc.Accept(writer);
+    // 等待UI进程退出
+    uiMonitorThread.join();
 
-    //LOG_F(INFO, "网卡流量监控数据: %s", buffer.GetString());
+    // UI进程退出后，HTTP服务即关闭
+    server.stop();
+    serverThread.join();
+
+    // 如果还在抓包或者监控网卡流量，将其关闭
+    tsharkManager->reset();
 
     return 0;
 }
